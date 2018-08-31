@@ -1,4 +1,4 @@
-class Healines:
+class New:
     '''
     class that defines the movie object
     '''
@@ -9,4 +9,4 @@ class Healines:
         self.country = country
         self.description = description
         self.url = url
-        self.urlToImage = urlToImage
+    
