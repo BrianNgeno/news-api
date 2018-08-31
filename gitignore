@@ -1,3 +1,6 @@
+'''
+this file enables you not to push unecessary file to github
+'''
 virtual/
 *pyc/
 start.sh/
