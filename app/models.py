@@ -23,3 +23,5 @@ class Article:
         self.url = url
         self.title = title
         self.publishedAt = publishedAt
+
+    

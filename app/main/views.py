@@ -18,4 +18,14 @@ def index():
 
     title = 'Welcome to the best Online News Highlight application'
     return render_template('index.html',title=title,sports=sports_news,general=general_news,business=business_news,entertainment=entertainment_news,technology=technology_news,science=science_news)
-# @main.route('new')
+
+@main.route('/news/<string:id>')
+def news(id):
+
+    '''
+    View news page function that returns the article details page and its data
+    '''
+    news = get_news(id)
+    articles = articles.get_articles(news.id)
+
+    return render_template('news.html',news = news)

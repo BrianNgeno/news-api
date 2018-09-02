@@ -72,9 +72,9 @@ def process_results(new_list):
 
     return new_results
 
-def get_from_articles(name):
+def get_from_articles(articles):
     '''
-    fuction that gets the jason response to our url request 
+    fuction that gets the json response to our url request 
     '''
     get_articles_url = host_url.format(name,api_key)
 
