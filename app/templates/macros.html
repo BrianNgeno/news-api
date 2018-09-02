@@ -1,25 +1,28 @@
-{% macro displayNewsList(news_list) %}
+{% macro displayNewsList(new_list) %}
 
-    {% for news in news_list %}
-    <div class="card md3 col-nd-3">
-         <a class="list-group-item list-group-item-action active" href="/news/{{news.url}}">
-            <li style="list-style: none">{{news.name}}</li>
-            </a>
-            <p>{{news.description}}</p><br>
-            <p>{{news.id}}</p><br>
-            <p>{{news.country}}</p></dr>
-        </div>     
-        
+<div class="row">
+    {% for news in new_list %}
+    <div class="col-md-4">
+        <div class="card">
+            <a class="list-group-item list-group-item-action active" href="/news/{{news.url}}">
+                <li style="list-style: none">{{news.name}}</li>
+                </a>
+                <p>{{news.description}}</p><br>
+                <p>{{news.id}}</p><br>
+                <p>{{news.country}}</p></dr>
+            </div>     
+        </div> 
+</div>   
     {% endfor %}
     {% endmacro %}
             
     
-    <!-- {% macro displayReviews(review_list) %}
+    {% macro displayArticles(_list) %}
     {% for review in review_list %}
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
         <h2> {{ review.title}} </h2>
         <p> {{ review.review | truncate(30) }}</p>
     </div>
     {% endfor %}
-    {% endmacro %} -->
+    {% endmacro %}
         
