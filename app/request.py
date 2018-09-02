@@ -101,14 +101,16 @@ def process_results(article_list):
     article_results = []
     for article_item in article_list:
         id = article_item.get('id')
-        name = new_item.get('name')
-        description = new_item.get('description')
-        url = new_item.get('url')
-        country = new_item.get('country')
+        name = article_item.get('name')
+        description = article_item.get('description')
+        url = article_item.get('url')
+        urlToImage = article_item.get('urlToImage')
+        publishedAt = article_item.get('publishedAt')
+        title = article_item.get('title')
       
 
       
-        new_object = New(id,name,description,url,country)
-        new_results.append(new_object)
+        article_object = Article(id,name,description,url,urlToImage,publishedAt,title)
+        article_results.append(article_object)
 
-    return new_results
+    return article_results
