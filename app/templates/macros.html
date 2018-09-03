@@ -4,9 +4,8 @@
     {% for news in new_list %}
 
        <div class="card cb-3 col-md-3">
-            <a class="list-group-item list-group-item-action active" href="/news/{{news.id}}">
+            <a class="list-group-item list-group-item-action active" href="/news/{{news.id}}">{{news.id}}</a>
                 <li style="list-style: none">{{news.name}}</li> 
-                </a>
                 <p>{{news.description}}</p><br>
                 <a href="{{news.url}}"> <button class="btn btn-outline-warning btn-sm" >View</button></a>
                 <li style="list-style: none">{{news.country}}</li>

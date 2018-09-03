@@ -29,7 +29,7 @@ def index():
 #     articles = articles.get_articles(news.id)
 
 #     return render_template('news.html',news = news)
-@main.route('/news/<id>')
+@main.route('/news/<string:id>')
 def news(id):
     '''
     Shows

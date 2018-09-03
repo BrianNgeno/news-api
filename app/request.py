@@ -6,7 +6,7 @@ api_key = None
 
 #getting the news base_url
 base_url = None
-
+host_url = None
 def configure_request(app):
     global api_key,base_url,host_url
     api_key = app.config['NEWS_API_KEY']
@@ -86,11 +86,11 @@ def get_articles(id):
 
         if get_articles_response['articles']:
             article_results_list = get_articles_response['articles']
-            articles_results = article_results(article_results_list)
+            articles_results = process_result(article_results_list)
 
-    return article_results
+    return articles_results
 
-def article_results(article_list):
+def process_result(article_list):
     '''
     Function  that processes the article result and transform them to a list of Objects
     Args:
@@ -110,7 +110,7 @@ def article_results(article_list):
       
 
       
-        article_object = Article(author,id,description,url,urlToImage,publishedAt,title)
+        article_object = Article(id,author,description,url,urlToImage,title,publishedAt)
         article_results.append(article_object)
 
     return article_results
