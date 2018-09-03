@@ -1,5 +1,5 @@
 import urllib.request,json
-from .models import New
+from .models import New,Article
 
 #getting the api_key
 api_key = None
@@ -8,7 +8,7 @@ api_key = None
 base_url = None
 
 def configure_request(app):
-    global api_key,base_url
+    global api_key,base_url,host_url
     api_key = app.config['NEWS_API_KEY']
     base_url = app.config['NEWS_API_BASE_URL']
     host_url = app.config['ARTICLE_API_BASE_URL']
@@ -72,11 +72,11 @@ def process_results(new_list):
 
     return new_results
 
-def get_from_articles(articles):
+def get_articles(id):
     '''
     fuction that gets the json response to our url request 
     '''
-    get_articles_url = host_url.format(name,api_key)
+    get_articles_url = host_url.format(id,api_key)
 
     with urllib.request.urlopen(get_articles_url)as url:
         get_articles_data = url.read()
@@ -86,11 +86,11 @@ def get_from_articles(articles):
 
         if get_articles_response['articles']:
             article_results_list = get_articles_response['articles']
-            article_results = process_results(article_results_list)
+            articles_results = article_results(article_results_list)
 
     return article_results
 
-def process_results(article_list):
+def article_results(article_list):
     '''
     Function  that processes the article result and transform them to a list of Objects
     Args:
@@ -101,7 +101,7 @@ def process_results(article_list):
     article_results = []
     for article_item in article_list:
         id = article_item.get('id')
-        name = article_item.get('name')
+        author = article_item.get('author')
         description = article_item.get('description')
         url = article_item.get('url')
         urlToImage = article_item.get('urlToImage')
@@ -110,7 +110,7 @@ def process_results(article_list):
       
 
       
-        article_object = Article(id,name,description,url,urlToImage,publishedAt,title)
+        article_object = Article(author,id,description,url,urlToImage,publishedAt,title)
         article_results.append(article_object)
 
     return article_results
