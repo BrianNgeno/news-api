@@ -7,7 +7,7 @@
             <a class="list-group-item list-group-item-action active" href="/news/{{news.id}}">{{news.id}}</a>
                 <li style="list-style: none">{{news.name}}</li> 
                 <p>{{news.description}}</p><br>
-                <a href="{{news.url}}"> <button class="btn btn-outline-warning btn-sm" >View</button></a>
+                <a href="{{news.url}}"> <button class="btn btn-outline-secondary btn-sm" >{{news.url}}</button></a>
                 <li style="list-style: none">{{news.country}}</li>
         </div>  
            
@@ -16,12 +16,4 @@
     {% endmacro %}
             
     
-    <!-- {% macro displayArticles() %}
-    {% for review in review_list %}
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
-        <h2> {{ review.title}} </h2>
-        <p> {{ review.review | truncate(30) }}</p>
-    </div>
-    {% endfor %}
-    {% endmacro %} -->
-        
+    
