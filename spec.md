@@ -1,12 +1,4 @@
-click==6.7
-dominate==2.3.1
-Flask==1.0.2
-Flask-Bootstrap==3.3.7.1
-Flask-Script==2.0.6
-gunicorn==19.9.0
-itsdangerous==0.24
-Jinja2==2.10
-MarkupSafe==1.0
-pkg-resources==0.0.0
-visitor==0.1.3
-Werkzeug==0.14.1
+users should see various news sources on the homepage and select the ones they prefer
+users should click on a news source and see all the news articles from that news source 
+user should see the image description and time the news article was created.
+user should also be able to click on an article and read it fully from the news sour
