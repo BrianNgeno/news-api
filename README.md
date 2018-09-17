@@ -3,6 +3,10 @@ This is an online news page that has numerous from different news sites ranging 
 
 ## Specifications
 A user can access an online page with news highlights, on sports, entertainment and general news. 
++ users should see various news sources on the homepage and select the ones they prefer
++ users should click on a news source and see all the news articles from that news source 
++ user should see the image description and time the news article was created.
++ user should also be able to click on an article and read it fully from the news sour
 
 ## Setup/Installation Requirements
 * With the lates web browser installed in  your computer or tablet one can access the  site from anywhere. The only installation needed is a web browser rangning from chrome,explore, or firefox 
